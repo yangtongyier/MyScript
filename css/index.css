@@ -1,0 +1,512 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  color: #555;
+  background: #F4F4F4;
+  overflow: hidden;
+}
+a {
+  color: #555;
+}
+a:hover,
+a:active {
+  color: #555;
+}
+.content {
+  margin: 0 auto;
+  width: 1040px;
+}
+/*--HEADER--*/
+.header {
+  height: 63px;
+  background: #FFF;
+  border-bottom: 1px solid #DDD;
+  /*PUBLIC*/
+  /*LOGO*/
+  /*NAV*/
+  /*LOGIN*/
+}
+.header h1,
+.header .nav {
+  float: left;
+}
+.header .login {
+  float: right;
+}
+.header h1 {
+  margin: 0 60px 0 10px;
+  width: 160px;
+  font-size: 0;
+}
+.header h1 a {
+  display: block;
+  height: 63px;
+  background: url("../img/kbs-logo.png") no-repeat left center;
+}
+.header .nav a {
+  position: relative;
+  float: left;
+  width: 90px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  border: 4px solid transparent;
+  border-left: none;
+  border-right: none;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+  /*下载*/
+}
+.header .nav a:hover {
+  border-top-color: #346AFF;
+}
+.header .nav a:hover .downLoad,
+.header .nav a:hover .downLoadBg {
+  height: 160px;
+}
+.header .nav a.bg {
+  color: #FFF;
+  background: #346AFF;
+}
+.header .nav a.liveQQ {
+  width: 63px;
+  height: 63px;
+  border: none;
+}
+.header .nav a.liveQQ img {
+  width: 100%;
+  height: 100%;
+}
+.header .nav a .downLoad,
+.header .nav a .downLoadBg {
+  position: absolute;
+  top: 59px;
+  left: -15px;
+  z-index: 10;
+  width: 120px;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.2s linear 0s;
+  -moz-transition: all 0.2s linear 0s;
+  -ms-transition: all 0.2s linear 0s;
+  -o-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+}
+.header .nav a .downLoad img,
+.header .nav a .downLoadBg img {
+  display: block;
+  margin: 10px auto 0;
+  width: 93px;
+  height: 93px;
+}
+.header .nav a .downLoad p,
+.header .nav a .downLoadBg p {
+  line-height: 23px;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+}
+.header .nav a .downLoadBg {
+  background: #FFF;
+  z-index: 9;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+.header .login {
+  margin-right: 10px;
+}
+.header .login a {
+  display: block;
+  margin-top: 17.5px;
+  width: 46px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #FFF;
+  background: #346AFF;
+  border-radius: 3px;
+}
+/*--CONTENT--*/
+.conBody {
+  margin: 20px auto;
+}
+/*MENU*/
+.menu {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 198px;
+  background: #FFF;
+  border: 1px solid #DDD;
+}
+.menu li {
+  position: relative;
+}
+.menu li a {
+  display: block;
+  padding-left: 24px;
+  height: 50px;
+  line-height: 50px;
+  border-left: 5px solid transparent;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+}
+.menu li a:hover,
+.menu li a.bg {
+  color: #346AFF;
+  background: #EFF3FF;
+  border-left-color: #346AFF;
+}
+.menu li a.bg i {
+  display: block;
+}
+.menu li a i {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -4px;
+  width: 12px;
+  height: 12px;
+}
+.menu li a i span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  margin-left: 3px;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border: 6px solid transparent;
+  border-left-color: #346AFF;
+}
+.menu li a i span.over {
+  z-index: 6;
+  left: -3px;
+  border-left-color: #EFF3FF;
+}
+/*RIGHT*/
+.right {
+  float: right;
+  width: 820px;
+  height: 100%;
+}
+/*CALENDER*/
+.calender {
+  position: relative;
+  padding: 5px 0;
+  height: 70px;
+  background: #FFF;
+  border: 1px solid #DDD;
+  /*CAL-LEFT/RIGHT*/
+  /*CAL-CON*/
+}
+.calender .cal-left,
+.calender .cal-right {
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 80px;
+  overflow: hidden;
+}
+.calender .cal-left span,
+.calender .cal-right span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  margin: -9px 0 0 -13.5px;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border: 9px solid transparent;
+}
+.calender .cal-left span.over,
+.calender .cal-right span.over {
+  margin-left: -10.5px;
+  z-index: 6;
+}
+.calender .cal-left {
+  left: 0;
+}
+.calender .cal-left span {
+  border-right-color: #999;
+}
+.calender .cal-left span.over {
+  border-right-color: #FFF;
+}
+.calender .cal-left:hover span {
+  border-right-color: #346AFF;
+}
+.calender .cal-left:hover span.over {
+  border-right-color: #FFF;
+}
+.calender .cal-right {
+  right: 0;
+}
+.calender .cal-right span {
+  margin-left: -4.5px;
+  border-left-color: #999;
+}
+.calender .cal-right span.over {
+  margin-left: -7.5px;
+  border-left-color: #FFF;
+}
+.calender .cal-right:hover span {
+  border-left-color: #346AFF;
+}
+.calender .cal-right:hover span.over {
+  border-left-color: #FFF;
+}
+.calender .cal-con {
+  position: relative;
+  margin: 0 auto;
+  width: 770px;
+  height: 100%;
+  overflow: hidden;
+}
+.calender .cal-con .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*JS中根据A的个数计算宽度*/
+  height: 100%;
+}
+.calender .cal-con .wrapper a {
+  float: left;
+  width: 110px;
+  height: 100%;
+}
+.calender .cal-con .wrapper a span {
+  display: block;
+  line-height: 27px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+}
+.calender .cal-con .wrapper a span.week {
+  margin-top: 9px;
+  color: #999;
+}
+.calender .cal-con .wrapper a:hover,
+.calender .cal-con .wrapper a.bg {
+  color: #346AFF;
+  background: #EFF3FF;
+}
+.calender .cal-con .wrapper a:hover span.week,
+.calender .cal-con .wrapper a.bg span.week {
+  color: #346AFF;
+}
+/*MATCH*/
+.match {
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+  background:url("../img/preload.gif") no-repeat top ;
+}
+.match .wrapper{
+  background:#F4F4F4;
+}
+.match .matchInfo {
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #DDD;
+}
+.match .matchInfo h2 {
+  padding-left: 15px;
+  height: 40px;
+  line-height: 40px;
+}
+.match .matchInfo a {
+  display: block;
+  border-top: 1px solid #DDD;
+}
+.match .matchInfo a ul {
+  width: 818px;
+  height: 59px;
+  line-height: 58px;
+  word-spacing: -6px;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+}
+.match .matchInfo a ul li {
+  float: left;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+  color: #555;
+}
+.match .matchInfo a ul li.item1 {
+  width: 130px;
+  padding-left: 28px;
+}
+.match .matchInfo a ul li.item2 {
+  width: 128px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+  color: #999;
+}
+.match .matchInfo a ul li.item3,
+.match .matchInfo a ul li.item5 {
+  width: 148px;
+}
+.match .matchInfo a ul li.item3 img,
+.match .matchInfo a ul li.item5 img {
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 18px;
+}
+.match .matchInfo a ul li.item3 span,
+.match .matchInfo a ul li.item5 span {
+  width: 80px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.match .matchInfo a ul li.item4 {
+  width: 80px;
+  vertical-align: middle;
+}
+.match .matchInfo a ul li.item4 span {
+  width: 80px;
+  height: 28px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 28px;
+  display: inline-block;
+  color: #555;
+}
+.match .matchInfo a ul li.item5 {
+  text-align: right;
+}
+.match .matchInfo a ul li.item5 img {
+  margin-left: 18px;
+  margin-right: 0;
+}
+.match .matchInfo a ul li.item6 {
+  width: 156px;
+  position: absolute;
+  top: 1px;
+  right: 0;
+  line-height: 48px;
+  padding: 5px 0;
+  color: #555;
+}
+.match .matchInfo a ul li.item6 span.icon-data {
+  display: inline-block;
+  vertical-align: -1px;
+  margin-left: 50px;
+  margin-right: 3px;
+  font-size: 14px;
+}
+.match .matchInfo a ul li.item6 span.data {
+  display: none;
+  width: 41px;
+  height: 54px;
+}
+.match .boxLast {
+  width: 818px;
+  height: 52px;
+  margin: 20px 0;
+  background: #fff;
+  border: 1px solid #eee;
+}
+.match .boxLast a {
+  display: inline-block;
+  position: relative;
+  width: 409px;
+  height: 52px;
+  font-size: 18px;
+  font-weight: normal;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+  line-height: 52px;
+  text-align: center;
+}
+.match .boxLast a.arrow-left {
+  float: left;
+  width: 408px;
+  border-right: 1px solid #eee ;
+}
+.match .boxLast a:hover {
+  color: #346AFF;
+}
+.match .boxLast a:hover span.beforeSeven i.arrow-inner {
+  border-right-color: #346AFF;
+}
+.match .boxLast a:hover span.afterSeven i.arrow-inner {
+  border-left-color: #346AFF;
+}
+.match .boxLast a span {
+  width: 10px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0;
+}
+.match .boxLast a span i {
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent;
+  position: absolute;
+}
+.match .boxLast a span.beforeSeven {
+  margin-left: -43px;
+}
+.match .boxLast a span.beforeSeven i {
+  left: 5px;
+  border-left-width: 0;
+  border-right-color: #fff;
+}
+.match .boxLast a span.beforeSeven i.arrow-inner {
+  border-right-color: #444;
+  left: 3px;
+}
+.match .boxLast a span.afterSeven {
+  margin-left: 32px;
+}
+.match .boxLast a span.afterSeven i {
+  left: 0;
+  border-right-width: 0;
+  border-left-color: #fff;
+}
+.match .boxLast a span.afterSeven i.arrow-inner {
+  border-left-color: #444;
+}
+.match .boxLast a span.afterSeven i.arrow-outer {
+  border-left-color: #fff;
+  left: -2px;
+}
+.match .boxLast a i {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent;
+}
+.match .boxLast a i.arrow-inner {
+  border-right-color: #444;
+  left: 3px;
+}
+.iScrollIndicator {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}

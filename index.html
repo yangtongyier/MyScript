@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>看比赛_比赛直播_腾讯体育</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="keywords" content=""/>
+    <meta name="description"
+          content="腾讯体育"/>
+    <link charset="utf-8" type="text/css" rel="shortcut icon" href="img/icon.png"/>
+    <link charset="utf-8" type="text/css" rel="stylesheet" href="css/reset.min.css"/>
+    <link charset="utf-8" type="text/css" rel="stylesheet" href="css/index.css"/>
+    <script charset="utf-8" type="text/javascript" src="js/html5.min.js"></script>
+</head>
+<body>
+<!--HEADER-->
+<header class="header">
+    <section class="content">
+        <h1><a href="#">看比赛_比赛直播_腾讯体育</a></h1>
+        <nav class="nav clear">
+            <a href="#" class="bg">看比赛</a>
+            <a href="http://sports.qq.com/fans/">社区</a>
+            <a href="#">下载
+                <div class="downLoad">
+                    <img src="img/weixin.jpg" alt="">
+                    <p>扫一扫下载</p>
+                    <p>腾讯体育APP</p>
+                </div>
+                <div class="downLoadBg"></div>
+            </a>
+            <a href="http://vip.sports.qq.com/">会员</a>
+            <a href="http://live.qq.com/" target="_blank" class="liveQQ">
+                <img src="img/live-qq-logo.jpg" alt="企鹅直播"/>
+            </a>
+        </nav>
+        <div class="login">
+            <a href="javascript:;">登录</a>
+        </div>
+    </section>
+</header>
+
+<!--CONTENT-->
+<section class="content conBody">
+    <!--MENU-->
+    <div class="menu">
+        <ul>
+
+        </ul>
+    </div>
+    <!--RIGHT-->
+    <div class="right">
+        <!--CALENDER-->
+        <div class="calender">
+            <div class="cal-con">
+                <div class="wrapper">
+
+                </div>
+            </div>
+            <a href="javascript:;" class="cal-left">
+                <span class="over"></span>
+                <span></span>
+            </a>
+            <a href="javascript:;" class="cal-right">
+                <span class="over"></span>
+                <span></span>
+            </a>
+        </div>
+        <!--MATCH-->
+        <div class="match">
+            <div class="wrapper" id="wrapper">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script charset="utf-8" type="text/javascript" src="js/ejs.min.js"></script>
+<script charset="utf-8" type="text/template" id="menuTemplate">
+    <%for(var i=0;i<menuData.length;i++){%>
+    <%var cur=menuData[i];%>
+    <li>
+        <a href="#<%=cur.HASH%>" data-id="<%=cur.columnId%>">
+            <%=cur.title%>
+            <i>
+                <span class="over"></span>
+                <span></span>
+            </i>
+        </a>
+    </li>
+    <%}%>
+</script>
+<script charset="utf-8" type="text/template" id="calendarTemplate">
+    <%for(var i=0;i<calendarData.length;i++){%>
+    <%var cur=calendarData[i];%>
+    <a href="javascript:;" data-time="<%=cur.date%>">
+        <span class="week"><%=cur.weekday%></span>
+        <span class="date"><%=cur.date.formatTime('{1}-{2}')%></span>
+    </a>
+    <%}%>
+</script>
+<script charset="utf-8" type="text/template" id="matchTemplate">
+    <%$.each(matchData,function(key,value){%>
+    <div class="matchInfo" data-time="<%=key%>">
+        <h2><%=key.formatTime('{1}月{2}日')%></h2>
+        <%$.each(value,function(index,item){%>
+        <a href="#">
+            <ul>
+                <li class="item1"><%=item.startTime.formatTime('{3}:{4}')%></li>
+                <li class="item2">
+                    <span><%=item.matchDesc%></span>
+                </li>
+                <li class="item3">
+                    <img src="<%=item.leftBadge%>" alt=""/>
+                    <span><%=item.leftName%></span>
+                </li>
+                <li class="item4">
+                    <span><%=item.leftGoal%>-<%=item.rightGoal%></span>
+                </li>
+                <li class="item5">
+                    <span><%=item.rightName%></span>
+                    <img src="<%=item.rightBadge%>" alt=""/>
+                </li>
+                <li class="item6">
+                    <span class="icon-data">
+                        视频直播
+                    </span>
+                    <span class="data">
+                    </span>
+                </li>
+            </ul>
+        </a>
+        <%});%>
+    </div>
+    <%});%>
+    <div class="boxLast clear">
+        <a class="arrow-left" href="#">
+                    <span class="beforeSeven">
+                        <i class="arrow-inner"></i>
+                        <i class="arrow-outer"></i>
+                    </span>
+            前七天
+        </a>
+        <a class="arrow-right" href="#">
+                    <span class="afterSeven">
+                         <i class="arrow-inner"></i>
+                        <i class="arrow-outer"></i>
+                    </span>
+            后七天
+        </a>
+    </div>
+</script>
+<script charset="utf-8" type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script charset="utf-8" type="text/javascript" src="js/iscroll-5.1.3.min.js"></script>
+<script charset="utf-8" type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
