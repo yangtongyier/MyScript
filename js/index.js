@@ -19,7 +19,7 @@
 
     //->formatTime:按照指定的模板把时间字符串格式化
     function formatTime(template) {
-        template = template || '{0}年{1}月{2}日 {3}时{4}分{5}秒'
+        template = template || '{0}年{1}月{2}日 {3}时{4}分{5}秒';
         var ary = this.match(/\d+/g);
         return template.replace(/\{(\d)\}/g, function () {
             var index = arguments[1],
@@ -62,9 +62,16 @@ var matchRender = (function () {
     //->bindHTML:绑定数据
     $matchFn.add(bindHTML);
     function bindHTML(data, columnId) {
-        var templateStr = $('#matchTemplate').html();
-        var resultStr = ejs.render(templateStr, {matchData: data});
-        $wrapper.html(resultStr);
+        if(Number(columnId)!==100101){
+            var templateStr = $('#matchTemplate').html();
+            var resultStr = ejs.render(templateStr, {matchData: data});
+            $wrapper.html(resultStr);
+        }else{
+            var gaming = $('#gamesTemplate').html();
+            var resultGameStr = ejs.render(gaming, {gamesData: data});
+            $wrapper.html(resultGameStr);
+        }
+
 
         //->绑定完成数据后,刷新滚动区域,定位到具体的区域
         if ($matchScroll) {
@@ -247,20 +254,22 @@ var calendarRender = (function () {
 var menuRender = (function () {
     var ary = [
         {'title': 'NBA', 'HASH': 'nba', 'columnId': '100000'},
-        {'title': '中超', 'HASH': 'csl', 'columnId': '208'},
-        {'title': '亚冠', 'HASH': 'afc', 'columnId': '605'},
-        {'title': '欧冠', 'HASH': 'ucl', 'columnId': '5'},
+        {'title': 'CBA', 'HASH': 'cba', 'columnId': '100008'},
         {'title': '英超', 'HASH': 'pl', 'columnId': '8'},
         {'title': '西甲', 'HASH': 'laliga', 'columnId': '23'},
         {'title': '意甲', 'HASH': 'seriea', 'columnId': '21'},
+        {'title': '欧冠', 'HASH': 'ucl', 'columnId': '5'},
         {'title': '德甲', 'HASH': 'bundesliga', 'columnId': '22'},
+        {'title': '法甲', 'HASH': 'l1', 'columnId': '24'},
+        {'title': 'NHL', 'HASH': 'nhl', 'columnId': '100005'},
+        {'title': 'NFL', 'HASH': 'nfl', 'columnId': '100005'},
+        {'title': '亚冠', 'HASH': 'afc', 'columnId': '605'},
+        {'title': '中超', 'HASH': 'csl', 'columnId': '208'},
+        {'title': '综合', 'HASH': 'others', 'columnId': '100002'},
+        {'title': '电竞', 'HASH': 'esports', 'columnId': '100101'},
         {'title': '欧洲世预赛', 'HASH': 'wcp-eu', 'columnId': '336'},
         {'title': '亚洲世预赛', 'HASH': 'wcp-as', 'columnId': '341'},
-        {'title': '南美世预赛', 'HASH': 'wcp-sa', 'columnId': '342'},
-        {'title': '法甲', 'HASH': 'l1', 'columnId': '24'},
-        {'title': 'CBA', 'HASH': 'cba', 'columnId': '100008'},
-        {'title': '综合', 'HASH': 'others', 'columnId': '100002'},
-        {'title': 'NFL', 'HASH': 'nfl', 'columnId': '100005'}
+        {'title': '南美世预赛', 'HASH': 'wcp-sa', 'columnId': '342'}
     ];
 
     var menuScroll = null,

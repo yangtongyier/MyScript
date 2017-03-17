@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>看比赛_比赛直播_腾讯体育</title>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="keywords" content=""/>
-    <meta name="description"
-          content="腾讯体育"/>
+    <meta name="description" content="腾讯体育"/>
     <link charset="utf-8" type="text/css" rel="shortcut icon" href="img/icon.png"/>
     <link charset="utf-8" type="text/css" rel="stylesheet" href="css/reset.min.css"/>
     <link charset="utf-8" type="text/css" rel="stylesheet" href="css/index.css"/>
@@ -19,7 +18,7 @@
         <h1><a href="#">看比赛_比赛直播_腾讯体育</a></h1>
         <nav class="nav clear">
             <a href="#" class="bg">看比赛</a>
-            <a href="http://sports.qq.com/fans/">社区</a>
+            <a href="http://sports.qq.com/quiz/">游戏•竞猜</a>
             <a href="#">下载
                 <div class="downLoad">
                     <img src="img/weixin.jpg" alt="">
@@ -28,13 +27,25 @@
                 </div>
                 <div class="downLoadBg"></div>
             </a>
-            <a href="http://vip.sports.qq.com/">会员</a>
+            <a href="http://vip.sports.qq.com/"><img class="vertical" src="img/vip.png" alt="">会员</a>
+            <a href="http://sports.qq.com/fans/">社区</a>
+            <a href="https://mall.jd.com/index-602755.html">装备热卖</a>
             <a href="http://live.qq.com/" target="_blank" class="liveQQ">
                 <img src="img/live-qq-logo.jpg" alt="企鹅直播"/>
             </a>
+            <div class="display"><span class="border">成为腾讯体育会员</span></div>
         </nav>
         <div class="login">
-            <a href="javascript:;">登录</a>
+            <a href="javascript:void(0);">
+                <img src="img/user.png" alt="">
+            </a>
+            <div class="signIn">
+                <img src="img/top.png" alt="">
+                <div>
+                    <span>登录后可观看更多精彩比赛</span>
+                    <a href="javascript:void(0);">登录</a>
+                </div>
+            </div>
         </div>
     </section>
 </header>
@@ -87,6 +98,14 @@
         </a>
     </li>
     <%}%>
+    <li>
+        <a href="https://marvellous12.sports.qq.com/mans1.php" data-id="343">国乒直通赛
+            <i>
+                <span class="over"></span>
+                <span></span>
+            </i>
+        </a>
+    </li>
 </script>
 <script charset="utf-8" type="text/template" id="calendarTemplate">
     <%for(var i=0;i<calendarData.length;i++){%>
@@ -118,6 +137,50 @@
                 <li class="item5">
                     <span><%=item.rightName%></span>
                     <img src="<%=item.rightBadge%>" alt=""/>
+                </li>
+                <li class="item6">
+                    <span class="icon-data">
+                        视频直播
+                    </span>
+                    <span class="data">
+                    </span>
+                </li>
+            </ul>
+        </a>
+        <%});%>
+    </div>
+    <%});%>
+    <div class="boxLast clear">
+        <a class="arrow-left" href="#">
+                    <span class="beforeSeven">
+                        <i class="arrow-inner"></i>
+                        <i class="arrow-outer"></i>
+                    </span>
+            前七天
+        </a>
+        <a class="arrow-right" href="#">
+                    <span class="afterSeven">
+                         <i class="arrow-inner"></i>
+                        <i class="arrow-outer"></i>
+                    </span>
+            后七天
+        </a>
+    </div>
+</script>
+<script charset="utf-8" type="text/template" id="gamesTemplate">
+    <%$.each(gamesData,function(key,value){%>
+    <div class="matchInfo" data-time="<%=key%>">
+        <h2><%=key.formatTime('{1}月{2}日')%></h2>
+        <%$.each(value,function(index,item){%>
+        <a href="#">
+            <ul>
+                <li class="item1"><%=item.startTime.formatTime('{3}:{4}')%></li>
+                <li class="item2">
+                    <span><%=item.matchDesc%></span>
+                </li>
+                <li class="itemGames">
+                    <img src="<%=item.leftBadge%>" alt=""/>
+                    <span><%=item.leftName%></span>
                 </li>
                 <li class="item6">
                     <span class="icon-data">

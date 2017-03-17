@@ -31,11 +31,8 @@ a:active {
 .header .nav {
   float: left;
 }
-.header .login {
-  float: right;
-}
 .header h1 {
-  margin: 0 60px 0 10px;
+  margin: 0 50px 0 10px;
   width: 160px;
   font-size: 0;
 }
@@ -47,7 +44,7 @@ a:active {
 .header .nav a {
   position: relative;
   float: left;
-  width: 90px;
+  width: 82px;
   height: 55px;
   line-height: 55px;
   text-align: center;
@@ -58,6 +55,29 @@ a:active {
   font-weight: 700;
   font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
   /*下载*/
+}
+.header .nav .display{
+  display: inline-block;
+  line-height: 63px;
+}
+.header .nav .border{
+  display: inline-block;
+  height: 38px;
+  width: 132px;
+  font-size:14px;
+  font-weight: 400;
+  padding-left: 20px;
+  border-radius: 19px;
+  color: #fff;
+  background: #e0ad14;
+  cursor: pointer;
+  vertical-align: middle;
+  line-height: 38px;
+  margin-left: 15px;
+
+}
+.header .nav .vertical{
+  vertical-align: sub;
 }
 .header .nav a:hover {
   border-top-color: #346AFF;
@@ -115,19 +135,75 @@ a:active {
   filter: alpha(opacity=70);
 }
 .header .login {
-  margin-right: 10px;
+  margin-left: 15px;
+  display: inline-block;
+  position: relative;
+
 }
-.header .login a {
-  display: block;
-  margin-top: 17.5px;
-  width: 46px;
-  height: 28px;
-  line-height: 28px;
+.header  .login a img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 7px;
+  font-weight: 700;
+}
+.header .login .signIn{
+  display: none;
+  position: absolute;
+  width: 303px;
+  top: 63px;
+  right: -15px;
+  z-index: 10;
+  padding: 0 15px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  -webkit-transition: all 0.2s linear 0s;
+  -moz-transition: all 0.2s linear 0s;
+  -ms-transition: all 0.2s linear 0s;
+  -o-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+}
+.header .login .signIn>img{
+  position: absolute;
+  top: -6px;
+  right: 32px;
+  z-index: 11;
+}
+.header .login .signIn>div{
+  height: 60px;
+  color: #333;
+  line-height: 60px;
+  padding-left: 20px;
+}
+.header .login .signIn>div>span{
+  font-size: 14px;
+}
+.header .login .signIn>div>a{
+  display: inline-block;
+  width: 70px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 32px;
   text-align: center;
-  color: #FFF;
-  background: #346AFF;
-  border-radius: 3px;
+  border-radius: 15px;
+  margin-left: 32px;
+  color: #fff;
+  background: #e0ad14;
 }
+.header .login:hover .signIn{
+  display: block;
+}
+/*.header .login a {*/
+  /*display: block;*/
+  /*margin-top: 17.5px;*/
+  /*width: 46px;*/
+  /*height: 28px;*/
+  /*line-height: 28px;*/
+  /*text-align: center;*/
+  /*color: #FFF;*/
+  /*background: #346AFF;*/
+  /*border-radius: 3px;*/
+/*}*/
 /*--CONTENT--*/
 .conBody {
   margin: 20px auto;
@@ -509,4 +585,10 @@ a:active {
 .iScrollIndicator {
   opacity: 0.4;
   filter: alpha(opacity=40);
+}
+
+.match .matchInfo a ul li.itemGames img{
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 18px;
 }
